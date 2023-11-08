@@ -1,0 +1,8 @@
+.custom-height {
+    max-height: 240px;
+}
+
+.square-card {
+    border-radius: 0 !important;
+    margin: auto;
+}
