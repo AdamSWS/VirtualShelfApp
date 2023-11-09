@@ -34,33 +34,24 @@
                         <div class="card-body">
                             <h2 class="row align-items-center">
                                 <div class="col-auto">
-                                    <div class="settings style-icon" style="background-image: url('../images/settings.png');"></div>
+                                    <div class="stats style-icon" style="background-image: url('../images/stats.png');"></div>
                                 </div>
-                                <div class="col-auto">Settings</div>
+                                <div class="col-auto">Stats</div>
                             </h2>
                         </div>
                     </div>
-                    <div class="card">
-                        <!-- theme -->
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <div class="theme style-icon" style="background-image: url('../images/theme.png');"></div>
-                                </div>
-                                <div class="col align-items-center">
-                                    <input type="button" class="btn-theme style-button" value="Theme" id="theme-button" />
-                                  </div>
-                            </div>
-                        </div>
-                        <!-- stats -->
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col-auto">
-                                    <div class="stats style-icon" style="background-image: url('../images/stats.png');"></div>
-                                </div>
-                                <div class="col align-items-center">
-                                    <input type="button" class="btn-stats style-button" value="Stats" id="stats-button" />
-                                  </div>
+                    <div class="overflow-auto custom-height">
+                        <div class="card">
+                            <!-- user stats -->
+                            <div class="stat-details">
+                                &ensp; <b>Currently Reading:</b> <br>
+                                &emsp; "The Shining" (72%) <br>
+                                &emsp; "Potter" (45%) <br>
+                                &ensp; <b>Total Read:</b> 42 <br>
+                                &ensp; <b>Favorite Genres:</b> Fantasy <br>
+                                &ensp; <b>Recommendations:</b> "The Lost Chronicles" <br>
+                                &ensp; <b>Reading Streak:</b> 14 days <br>
+                                &ensp; <b>Books in Library:</b> 167
                             </div>
                         </div>
                     </div>
@@ -73,26 +64,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-    <script>
-        //  button elements by id 
-        var themeButton = document.getElementById('theme-button');
-        var statsButton = document.getElementById('stats-button');
-      
-        // event listeners
-        themeButton.addEventListener('click', function() {
-          // Redirect to the "theme.html" page
-          window.location.href = 'theme.html';
-        });
-        statsButton.addEventListener('click', function() {
-          // Redirect to the "stats.html" page
-          window.location.href = 'stats.html';
-        });
-
-
-    </script>
-      
-
-
 </body>
 </html>

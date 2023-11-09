@@ -1,0 +1,60 @@
+/* button */
+
+.style-button {
+    /* line-height: 0.0; */
+    height: 30px;
+    width: 150px;
+    vertical-align: middle;
+	box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:3px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.style-button:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.style-button:active {
+	position:relative;
+	top:1px;
+}
+
+
+  
+/* icon */
+.style-icon {
+    width: 50px; /* Set the width of the icon */
+    height: 50px; /* Set the height of the icon */
+    background-image: url('src="../images/theme.png'); /* Set the path to your icon image */
+    background-size: cover; /* Scale the background image to cover the div */
+    background-repeat: no-repeat; /* Don't repeat the background image */
+    background-position: center center; /* Center the background image */
+    border-radius: 50%; /* Make the icon a circle (for example) */
+    border: 2px solid #333; /* Add a border to the icon */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow to the icon */
+    /* Add other styling properties as needed */
+}
+
+/* card */
+.square-card {
+    border-radius: 0 !important;
+    margin: auto;
+}
+
+/* div */
+.div-element {
+    padding: 20px; /* Add your desired padding value */
+    box-sizing: border-box;
+}
+
+
+
