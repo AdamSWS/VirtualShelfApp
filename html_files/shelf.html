@@ -14,6 +14,7 @@
     <div class="title-background text-center py-2">
         <h1 class="mb-0">Virtual Shelf</h1>
     </div>
+
     <!-- Navbar containing: Home, Shelf, Settings -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid justify-content-center">
@@ -30,11 +31,84 @@
             </ul>
         </div>
     </nav>
+
     <!-- Scroll Wheel containing: All user's books -->
+    <div class="100-px-wide">
+    <divid="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../images/book_covers/hp_goblet_of_fire.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Harry Potter and the Goblet of Fire</h5>
+              <p>J.K. Rowling</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../images/book_covers/hp_prisoner_azkaban.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Harry Potter and the Prisoner of Azkaban</h5>
+              <p>J.K. Rowling</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../images/book_covers/hp_cursed_child.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Harry Potter and the Cursed Child</h5>
+              <p>J.K. Rowling</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../images/book_covers/hp_deathly_hallows.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Harry Potter and the Deathly Hallows</h5>
+              <p>J.K. Rowling</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+
     <!-- Search Settings -->
     <!-- Letter Wheel indicator -->
     <!-- Current Book Information -->
     <!-- Navbar containing: Edit, Add, Remove -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <button type="button" class="btn btn-secondary">Edit</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-secondary">Add New</button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-secondary">Remove</button>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-dark" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
     <!-- Script tags -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
