@@ -1,0 +1,14 @@
+.book_carousel {
+    background-size: cover;
+    justify-content: center;
+    margin:auto;
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+.editing_bar {
+    justify-content: center;
+    margin:auto;
+    position: relative;
+}
