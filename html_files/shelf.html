@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css_files/style.css">
     <link rel="stylesheet" href="../css_files/shelf_styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  </head>
 <body>
     <!-- Virtual Shelf Title -->
     <div class="title-background text-center py-2">
@@ -34,62 +35,175 @@
 
     <!-- Scroll Wheel containing: All user's books -->
     <div class="book_carousel">
-    <divid="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="false">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
+      carousel
+      <div id="carouselExampleControls" class="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../images/book_covers/hp_goblet_of_fire.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Harry Potter and the Goblet of Fire</h5>
-              <p>J.K. Rowling</p>
+            <div class="carousel-item active">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 1</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../images/book_covers/hp_prisoner_azkaban.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Harry Potter and the Prisoner of Azkaban</h5>
-              <p>J.K. Rowling</p>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 2</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../images/book_covers/hp_cursed_child.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Harry Potter and the Cursed Child</h5>
-              <p>J.K. Rowling</p>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 3</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../images/book_covers/hp_deathly_hallows.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Harry Potter and the Deathly Hallows</h5>
-              <p>J.K. Rowling</p>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 4</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 5</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 6</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 7</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 8</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title 9</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <script>
+      var multipleCardCarousel = document.querySelector(
+  "#carouselExampleControls"
+);
+if (window.matchMedia("(min-width: 768px)").matches) {
+  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+    interval: false,
+  });
+  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+  var cardWidth = $(".carousel-item").width();
+  var scrollPosition = 0;
+  $("#carouselExampleControls .carousel-control-next").on("click", function () {
+    if (scrollPosition < carouselWidth - cardWidth * 4) {
+      scrollPosition += cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+  $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+    if (scrollPosition > 0) {
+      scrollPosition -= cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+} else {
+  $(multipleCardCarousel).addClass("slide");
+}
+Advertisements
+
+    </script>
     </div>
 
     <!-- Search Settings -->
+    <div>
+      search settings
+    </div>
     <!-- Letter Wheel indicator -->
+    <div>
+      letter wheel
+    </div>
     <!-- Current Book Information -->
+    <div>
+      current book info
+    </div>
     <!-- Navbar containing: Edit, Add, Remove -->
+    <div class="editing_bar">
+      navbar
+
     <div class="editing_bar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto" width="50%">
+          <ul class="navbar-nav flex-row" width="50%">
             <li class="nav-item active">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Edit
@@ -115,10 +229,52 @@
               </div>
             </li>
             <li class="nav-item">
-              <button type="button" class="btn btn-secondary">Add New</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#smartadd">
+                Add Book
+              </button>
+              <div class="modal fade" id="smartadd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Smart Add</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Hello!
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li class="nav-item">
-              <button type="button" class="btn btn-secondary">Remove</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Remove
+              </button>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Remove Book</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Are you sure you want to remove this book?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Yes, remove</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -128,6 +284,27 @@
         </div>
       </nav>
     </div>
+    </div>
+
+    <script>
+      //  button elements by id 
+      var themeButton = document.getElementById('edit-button');
+      var statsButton = document.getElementById('add-button');
+    
+      // event listeners
+      themeButton.addEventListener('click', function() {
+        // Redirect to the "theme.html" page
+        window.location.href = 'manual_mode.html';
+      });
+      statsButton.addEventListener('click', function() {
+        // Redirect to the "stats.html" page
+        window.location.href = 'add_new.html';
+      });
+
+
+  </script>
+
+
     <!-- Script tags -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
