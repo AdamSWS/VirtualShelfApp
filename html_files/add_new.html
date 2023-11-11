@@ -15,9 +15,59 @@
         <h1 class="mb-0">Virtual Shelf</h1>
     </div>
     <!-- Back button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:history.back()">Back</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
     <!-- Section with mic.png for users to select audio mode -->
-    <!-- Section with brain.png for users to select smart mode -->
+    <div class="card mb-3 mode-card" onclick="location.href='../html_files/audio_mode.html'">
+        <div class="row g-0">
+            <div class="col-md-4 d-flex justify-content-center align-items-center image-container">
+                <img src="../images/mic.png" class="mode-image" alt="Audio Mode">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Audio Mode</h5>
+                    <p class="card-text">Add a new book by speaking the details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section with scan.png for users to select smart mode -->
+    <div class="card mb-3 mode-card" onclick="location.href='../html_files/smart_mode.html'">
+        <div class="row g-0">
+            <div class="col-md-4 d-flex justify-content-center align-items-center image-container">
+                <img src="../images/scan.png" class="mode-image" alt="Smart Mode">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Smart Mode</h5>
+                    <p class="card-text">Add a new book by scanning its ISBN.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Section with edit.png for users to select manual mode -->
+    <div class="card mb-3 mode-card" onclick="location.href='../html_files/manual_mode.html'">
+        <div class="row g-0">
+            <div class="col-md-4 d-flex justify-content-center align-items-center image-container">
+                <img src="../images/edit.png" class="mode-image" alt="Manual Mode">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Manual Mode</h5>
+                    <p class="card-text">Manually enter the details of your book.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>  
     <!-- Script tags -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

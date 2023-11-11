@@ -1,0 +1,30 @@
+.mode-card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mode-card:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    padding: 10px; /* Adjust the padding as needed */
+}
+
+.mode-image {
+    max-width: 100px; /* Set a max-width for all images */
+    max-height: 100px; /* Set a max-height for all images */
+    object-fit: contain; /* This will ensure that the aspect ratio of the image is maintained */
+}
+
+/* Ensure that the image is centered both vertically and horizontally */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Optional: Add a hover effect for the card */
+.mode-card:hover .mode-image {
+    opacity: 0.9;
+}

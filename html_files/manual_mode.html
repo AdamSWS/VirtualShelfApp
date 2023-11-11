@@ -15,7 +15,40 @@
         <h1 class="mb-0">Virtual Shelf</h1>
     </div>
     <!-- Back button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:history.back()">Back</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!-- Section with edit.png for users to click to enter book info -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Enter Book Details</h2>
+        <form id="manualEntryForm">
+            <div class="mb-3">
+                <label for="bookTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="bookTitle" required>
+            </div>
+            <div class="mb-3">
+                <label for="bookAuthor" class="form-label">Author</label>
+                <input type="text" class="form-control" id="bookAuthor" required>
+            </div>
+            <div class="mb-3">
+                <label for="bookGenre" class="form-label">Genre</label>
+                <input type="text" class="form-control" id="bookGenre" required>
+            </div>
+            <div class="mb-3">
+                <label for="bookPages" class="form-label">Number of Pages</label>
+                <input type="number" class="form-control" id="bookPages" required>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-dark" id="selectButton">Select</button>
+            </div>
+        </form>
+    </div>
     <!-- Select button -->
     <!-- Script tags -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

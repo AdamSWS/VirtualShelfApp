@@ -1,57 +1,69 @@
-.book_carousel {
-    justify-content: center;
-    margin:auto;
-    position: relative;
-    background-color: grey;
-    
-  }
-
-.editing_bar {
-    justify-content: center;
-    margin:auto;
-    position: relative;
-    background-color: grey;
-}
-
 .carousel-inner {
-  padding: 1em;
+    overflow: visible;
 }
-.card {
-  margin: 0 0.5em;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  border: none;
-}
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: #e1e1e1;
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-@media (min-width: 768px) {
-  .carousel-item {
-    margin-right: 0;
-    flex: 0 0 33.333333%;
-    display: block;
-  }
-  .carousel-inner {
-    display: flex;
-  }
-}
-.card .img-wrapper {
-    max-width: 100%;
-    height: 13em;
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
     display: flex;
     justify-content: center;
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.carousel-item-next.carousel-item-left,
+.carousel-item-prev.carousel-item-right {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+.carousel-item-next,
+.carousel-item-prev { 
+    transform: translateX(0);
+}
+
+.carousel-item-left.carousel-item-next {
+    transform: translateX(-50%) scale(0.8);
+}
+
+.carousel-item-right.carousel-item-prev {
+    transform: translateX(50%) scale(0.8);
+}
+
+
+.carousel-item img {
+    max-width: 96px;
+    object-fit: cover;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#alphabetCarousel .carousel-inner {
+    display: flex;
     align-items: center;
 }
-.card img {
-    max-height: 100%;
+
+#alphabetCarousel .carousel-item {
+    min-width: 100%; /* To ensure each item takes full width */
 }
-@media (max-width: 767px) {
-  .card .img-wrapper {
-    height: 17em;
-  }
+
+#alphabetCarousel .carousel-item .d-flex {
+    flex-wrap: nowrap; /* Prevent wrapping to the new line */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scrollbar-width: thin; /* For non-webkit browsers */
 }
+
+/* Add scrollbar styles for webkit browsers if needed */
+#alphabetCarousel .carousel-item .d-flex::-webkit-scrollbar {
+    height: 8px;
+}
+
+#alphabetCarousel .carousel-item .d-flex::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+#alphabetCarousel .carousel-item .d-flex::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+

@@ -15,8 +15,36 @@
         <h1 class="mb-0">Virtual Shelf</h1>
     </div>
     <!-- Back button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:history.back()">Back</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!-- Section with mic.png for users to click to enter audio -->
-    <!-- Select button -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Say your Book Details</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <!-- Microphone image that users can click to trigger a listening event -->
+                        <img src="../images/mic.png" class="card-img-top" alt="Microphone" style="width: 100px; margin: 0 auto;" id="micButton">
+    
+                        <!-- Text to prompt user action -->
+                        <p class="card-text mt-4">Click the microphone to start audio capture.</p>
+                    </div>
+                </div>
+                <!-- Select button -->
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-dark" id="selectButton">Select</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Script tags -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

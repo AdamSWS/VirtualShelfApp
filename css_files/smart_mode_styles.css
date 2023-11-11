@@ -1,0 +1,10 @@
+#videoContainer {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+#videoElement {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
