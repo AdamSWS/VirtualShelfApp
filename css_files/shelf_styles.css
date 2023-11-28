@@ -1,69 +1,200 @@
-.carousel-inner {
-    overflow: visible;
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.carousel-item-next,
-.carousel-item-prev,
-.carousel-item.active {
+#wrap {
+    margin: auto;
+    width: 80%;
+    border-radius: 20px; /* Rounded corners for smoothness */
+    
+}
+
+#bookshelf {
+    margin: auto;
+    width: 100%; /* Set the width to 100% to take up the full screen width */
+    height: 220px;
+    padding: 5px;
+    position: relative;
     display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div.bookframe {
+    margin: 0 10px; /* Increased margin for more spacing between books */
+    display: inline-block;
+    border: 1px solid #888; /* Add a border to simulate book covers */
+    border-radius: 5px; /* Rounded corners for book covers */
+    padding: 20px; /* Add more padding for spacing inside the book cover */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Add depth */
+    transition: transform 0.2s ease; /* Add a smooth transform transition */
+}
+
+div.bookframe > div {
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+div.bookframe > div a {
+    font-size: 12px; /* Adjust based on your design */
+    line-height: 14px; /* Adjust based on your design */
+}
+
+div.bookframe:hover {
+    transform: scale(1.05); /* Enlarge book cover on hover for a hover effect */
+}
+
+input[type="radio"].book {
+    display: none;
+}
+
+input[type="radio"].book + div {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+    background: #000000;
+    color: #FFFFFF;
+    font-size: 30px;
+    min-height: 1px;
+    max-height: 10000px;
+    line-height: 30px;
+    top: 250px;
+    left: calc(50% - 200px);
+    margin: 0;
+    display: none;
+    border: 2px solid red;
+    box-sizing: border-box;
+}
+
+input[type="radio"].book + div > span {
+    font-size: 65%;
+    display: inline;
+}
+
+input[type="radio"]:checked.book + div {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    opacity: 1;
-    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.carousel-item-next.carousel-item-left,
-.carousel-item-prev.carousel-item-right {
-    transform: scale(0.8);
-    opacity: 0.5;
+.label {
+    position: relative;
 }
 
-.carousel-item-next,
-.carousel-item-prev { 
-    transform: translateX(0);
+.label label {
+    position: relative;
+    z-index: 2;
+    width: 20px;
+    height: 200px;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.carousel-item-left.carousel-item-next {
-    transform: translateX(-50%) scale(0.8);
+.label div {
+    position: absolute;
+    box-sizing: border-box;
+    line-height: 45px;
+    z-index: 1;
+    width: 200px;
+    height: 50px;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    top: 180px;
+    left: calc(50% - 25px);
 }
 
-.carousel-item-right.carousel-item-prev {
-    transform: translateX(50%) scale(0.8);
+#letter-wheel {
+    /* Add styles for the letter wheel here */
+}
+
+#current-book-info {
+    /* Add styles for the book description here */
+    text-align: center;
+    padding: 20px;
 }
 
 
-.carousel-item img {
-    max-width: 96px;
-    object-fit: cover;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
+  
+  .scroll-indicator {
+    width: 20%;
+    height: 20px;
+    background-color: #f0f0f0;
+    position: relative;
+    align-self: center;
+    cursor: pointer;
+  }
+  
+  .scroll-handle {
+    width: 20%;
+    height: 100%;
+    background-color: #b30000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: grab; /* Make sure this line is present */
+  }
 
-#alphabetCarousel .carousel-inner {
+  .book-info-card {
+    margin-top: 20px; /* Space above the card */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    border: 1px solid #ddd; /* Border for the card */
+    background: #ffffff; /* Background color */
+    width: 30%;
+    align-self: center;
+  }
+
+  
+
+  #book-info-edit-form {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  
+  .save-button, .cancel-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
-#alphabetCarousel .carousel-item {
-    min-width: 100%; /* To ensure each item takes full width */
+.cancel-button {
+    background-color: #f44336; /* Red */
 }
 
-#alphabetCarousel .carousel-item .d-flex {
-    flex-wrap: nowrap; /* Prevent wrapping to the new line */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scrollbar-width: thin; /* For non-webkit browsers */
+.form-buttons {
+    text-align: center;
+  }
+  
+.remove-buttons {
+    text-align: center;
 }
 
-/* Add scrollbar styles for webkit browsers if needed */
-#alphabetCarousel .carousel-item .d-flex::-webkit-scrollbar {
-    height: 8px;
-}
-
-#alphabetCarousel .carousel-item .d-flex::-webkit-scrollbar-thumb {
-    background-color: #888;
-}
-
-#alphabetCarousel .carousel-item .d-flex::-webkit-scrollbar-track {
-    background-color: #eee;
-}
+  
+  .save-button {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .cancel-button {
+    background-color: #f44336; /* Red */
+  }
+  
 
