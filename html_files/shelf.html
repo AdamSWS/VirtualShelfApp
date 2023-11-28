@@ -36,46 +36,47 @@
     </div>
   </nav>
 
-<!-- Book Shelf containing Books -->
-<div class="card" style="border: 1px solid #ddd; background: #bebebe; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); padding: 15px; margin-bottom: 20px;">
-  <div class="card-body">
-    <div id="wrap">
-      <form action="#" method="get" id="bookshelf">
-        <!-- Books will be displayed here -->
-      </form>
+  <!-- Book Shelf containing Books -->
+  <div class="card"
+    style="border: 1px solid #ddd; background: #bebebe; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); padding: 15px; margin-bottom: 20px;">
+    <div class="card-body">
+      <div id="wrap">
+        <form action="#" method="get" id="bookshelf">
+          <!-- Books will be displayed here -->
+        </form>
+      </div>
+      <!-- Other elements like scroll indicator and current book info -->
     </div>
-    <!-- Other elements like scroll indicator and current book info -->
   </div>
-</div>
 
-<!-- Letter Wheel indicator - Allows users to scroll through books in alphabetical order with a wheel.  -->
-<div id="scroll-indicator" class="scroll-indicator">
-  <div id="scroll-handle" class="scroll-handle"></div>
-</div>
+  <!-- Letter Wheel indicator - Allows users to scroll through books in alphabetical order with a wheel.  -->
+  <div id="scroll-indicator" class="scroll-indicator">
+    <div id="scroll-handle" class="scroll-handle"></div>
+  </div>
 
-<!-- Current Book Information -->
-<div class="card book-info-card">
-  <div class="card-body">
-    <div id="current-book-info">
-      <h3 id="editable-title" contenteditable="false">Title</h3>
-      <p>Author: <span id="editable-author" contenteditable="false">Author Name</span></p>
-      <p>Genre: <span id="editable-genre" contenteditable="false">Genre</span></p>
-      <p>Pages: <span id="editable-pages" contenteditable="false">Number</span>
+  <!-- Current Book Information -->
+  <div class="card book-info-card">
+    <div class="card-body">
+      <div id="current-book-info">
+        <h3 id="editable-title" contenteditable="false">Title</h3>
+        <p>Author: <span id="editable-author" contenteditable="false">Author Name</span></p>
+        <p>Genre: <span id="editable-genre" contenteditable="false">Genre</span></p>
+        <p>Pages: <span id="editable-pages" contenteditable="false">Number</span>
           <input type="number" id="page-number-input" style="width: 30%; display: none;" min="1">
-      </p>
+        </p>
+      </div>
+
+      <div class="form-buttons" style="display: none;">
+        <p class="edit-instructions">Click on text to edit</p>
+        <button type="button" class="btn btn-primary save-button" onclick="saveBookInfo()">Save</button>
+        <button type="button" class="btn btn-secondary cancel-button" onclick="cancelEdit()">Cancel</button>
+      </div>
+      <div class="remove-buttons" style="display: none;">
+        <button type="button" class="btn btn-danger confirm-remove-button" onclick="confirmRemove()">Remove</button>
+        <button type="button" class="btn btn-secondary cancel-remove-button" onclick="cancelRemove()">Cancel</button>
+      </div>
     </div>
-    
-    <div class="form-buttons" style="display: none;">
-      <p class="edit-instructions">Click on text to edit</p>
-      <button type="button" class="btn btn-primary save-button" onclick="saveBookInfo()">Save</button>
-      <button type="button" class="btn btn-secondary cancel-button" onclick="cancelEdit()">Cancel</button>
-    </div> 
-    <div class="remove-buttons" style="display: none;">
-      <button type="button" class="btn btn-danger confirm-remove-button" onclick="confirmRemove()">Remove</button>
-      <button type="button" class="btn btn-secondary cancel-remove-button" onclick="cancelRemove()">Cancel</button>
-    </div>     
   </div>
-</div>
 
 
   <!-- Navbar containing: Edit, Add, Remove -->
@@ -97,7 +98,7 @@
 
   </div>
   <!-- Script tags -->
-  <script src="../js_files/shelf_action.js"></script> 
+  <script src="../js_files/shelf_action.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
