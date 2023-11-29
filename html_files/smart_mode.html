@@ -27,16 +27,19 @@
     <!-- Section with scan.png for users to click to enter scan -->
     <div class="container mt-4">
         <h2 class="text-center">Scan Your Book</h2>
+        <h1 id="scanningMessage"></h1>
         <div id="videoContainer">
             <video id="videoElement" autoplay></video>
         </div>
-        <div class="d-flex justify-content-center mt-3">
+        <div class="d-flex justify-content-center mt-3" id="scanContainer">
             <button class="btn btn-dark" id="startScan">Start Scanning</button>
+            <h2 id="scanningMessage" style="display: none;"></h2> <!-- Initially hidden -->
         </div>
     </div>
     <!-- Scan info -->
     <!-- Select button -->
     <!-- Script tags -->
+    <script src="/js_files/theme_logic.js"></script>
     <script src="../js_files/scan_logic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

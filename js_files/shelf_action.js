@@ -127,9 +127,43 @@
                 }
             });
         });
+
+        const sortBySelect = document.getElementById('sort-by');
+        sortBySelect.addEventListener('change', function() {
+            sortBooks(this.value);
+        });
         assignRadioListeners();
         
     });
+
+    function sortBooks(sortBy) {
+        switch (sortBy) {
+            case 'title':
+                books.sort((a, b) => a.title.localeCompare(b.title));
+                break;
+            case 'author':
+                books.sort((a, b) => a.author.localeCompare(b.author));
+                break;
+            case 'genre':
+                books.sort((a, b) => a.genre.localeCompare(b.genre));
+                break;
+            case 'pages':
+                books.sort((a, b) => a.pages - b.pages);
+                break;
+            default:
+                books.sort((a, b) => a.title.localeCompare(b.title));
+        }
+        updateBookshelf();
+    }
+
+    function updateBookshelf() {
+        const bookshelf = document.getElementById('bookshelf');
+        bookshelf.innerHTML = ''; // Clear existing books
+        books.forEach(book => {
+            bookshelf.appendChild(createBookElement(book));
+        });
+        assignRadioListeners(); // Reassign radio listeners
+    }
 
 const scrollIndicator = document.getElementById('scroll-indicator');
 const scrollHandle = document.getElementById('scroll-handle');
@@ -257,7 +291,6 @@ function createBookElement(book) {
     bookFrame.appendChild(radioInput);
 
     const bookInfo = document.createElement('div');
-    // You can structure the bookInfo div as needed, e.g., including title and description
     bookInfo.innerHTML = `
         <a href="#" style="font-size: 12px;">${book.title}</a>
         <span style="font-size: 10px;">${book.description}</span>
@@ -268,17 +301,20 @@ function createBookElement(book) {
     const bookWidth = baseWidth + (book.pages * widthFactor);
     bookFrame.style.width = bookWidth + 'px';
 
-    // Adjust the title size to fit the book
+    // Generate a random color and its darker shade
+    const randomColor = getRandomColor();
+    const darkerShade = getDarkerShade(randomColor);
+
+    // Set the linear gradient with random color and its darker shade
+    bookFrame.style.backgroundImage = `linear-gradient(to right, ${randomColor} 50%, ${darkerShade} 50%)`;
+
     adjustTitleSize(bookInfo, bookWidth);
     bookFrame.appendChild(bookInfo);
 
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label';
-    // Structure the labelDiv as needed
     labelDiv.innerHTML = `<label for="${book.id}"></label><div>${book.title}</div>`;
     bookFrame.appendChild(labelDiv);
-    // Apply the random styles to the book element
-    bookFrame.style.backgroundColor = getRandomColor();
 
     return bookFrame;
 }
@@ -286,12 +322,21 @@ function createBookElement(book) {
 
 // Function to generate a random color
 function getRandomColor() {
-    const letters = '01234567'; // Use higher values for lighter colors
+    const letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * letters.length)];
+        color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+function getDarkerShade(color) {
+    let darkerShade = '#';
+    for (let i = 1; i < 7; i += 2) {
+        const shade = Math.max(0, parseInt(color.substring(i, i + 2), 16) - 32);
+        darkerShade += shade.toString(16).padStart(2, '0');
+    }
+    return darkerShade;
 }
 
 function adjustTitleSize(bookInfo, bookWidth) {

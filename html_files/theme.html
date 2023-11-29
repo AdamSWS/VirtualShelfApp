@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings</title>
-    <link rel="stylesheet" href="../css_files/style.css">
-    <link rel="stylesheet" href="../css_files/settings_styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css_files/style.css" />
+    <link rel="stylesheet" href="../css_files/settings_styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
-<body id="body"> <!-- data-bs-theme="dark" -->
+
+<body id="body">
+    <!-- data-bs-theme="dark" -->
 
     <!-- Virtual Shelf Title -->
     <div class="title-background text-center py-2">
         <h1 class="mb-0">Virtual Shelf</h1>
     </div>
+
     <!-- Back button -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid justify-content-center">
             <ul class="navbar-nav flex-row">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="goBack()">Back</a>
+                    <a class="nav-link" href="javascript:history.back()">Back</a>
                 </li>
             </ul>
         </div>
     </nav>
+    
     <!-- Section with theme.png for users to change between light and dark mode -->
     <section class="theme py-3">
         <div class="container">
@@ -35,7 +41,8 @@
                         <div class="card-body">
                             <h2 class="row align-items-center">
                                 <div class="col-auto">
-                                    <div class="theme style-icon" style="background-image: url('../images/theme.png');"></div>
+                                    <div class="theme style-icon" style="background-image: url('../images/theme.png')">
+                                    </div>
                                 </div>
                                 <div class="col-auto">Theme</div>
                             </h2>
@@ -46,13 +53,15 @@
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-auto">
-                                    <div class="light style-icon" style="background-image: url('../images/light.png');"></div>
+                                    <div class="light style-icon" style="background-image: url('../images/light.png')">
+                                    </div>
                                 </div>
                                 <div class="col align-items-center">
                                     <!-- <div class="forom-check form-switch mx-4">
                                         <input class="form-check-input p-2" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked onclick="myFunction()"/>
                                     </div> -->
-                                    <input type="button" class="btn-light style-button" value="Light" id="light-button" />
+                                    <input type="button" class="btn-light style-button" value="Light"
+                                        id="light-button" />
                                 </div>
                             </div>
                         </div>
@@ -60,7 +69,8 @@
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-auto">
-                                    <div class="dark style-icon" style="background-image: url('../images/dark.png');"></div>
+                                    <div class="dark style-icon" style="background-image: url('../images/dark.png')">
+                                    </div>
                                 </div>
                                 <div class="col align-items-center">
                                     <input type="button" class="btn-dark style-button" value="Dark" id="dark-button" />
@@ -74,94 +84,16 @@
     </section>
     <!-- Section with stats.png for users to change between light and dark mode -->
     <!-- Script tags -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-
-    <!-- <script>
-        function myFunction() {
-            var element = document.body;
-            element.dataset.bsTheme = 
-                element.dataset.bsTheme == "light" ? "dark" : "light";
-        }
-    </script> -->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var body = document.getElementById('body');
-            var darkButton = document.getElementById('dark-button');
-            var lightButton = document.getElementById('light-button');
-    
-            console.log("body:", body);
-            console.log("darkButton:", darkButton);
-            console.log("lightButton:", lightButton);
-    
-            if (!body || (!darkButton && !lightButton)) {
-                console.error('Required elements not found.');
-                return;
-            }
-    
-            // Apply the stored theme preference or default to light
-            var themePreference = localStorage.getItem('themePreference');
-            if (themePreference === 'dark') {
-                body.classList.add('dark-theme');
-            } else {
-                body.classList.add('light-theme');
-            }
-    
-            // Add event listeners only if the buttons are found
-            if (darkButton) {
-                darkButton.addEventListener('click', function() {
-                    body.classList.add('dark-theme');
-                    body.classList.remove('light-theme');
-                    // Save the theme preference in local storage
-                    localStorage.setItem('themePreference', 'dark');
-                });
-            } else {
-                console.error('darkButton not found.');
-            }
-    
-            if (lightButton) {
-                lightButton.addEventListener('click', function() {
-                    body.classList.add('light-theme');
-                    body.classList.remove('dark-theme');
-                    // Save the theme preference in local storage
-                    localStorage.setItem('themePreference', 'light');
-                });
-            } else {
-                console.error('lightButton not found.');
-            }
-        });
-    </script>
-    
-    
-    
-    
-    
-    
-    
-    
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-    
-
-
-    <script>
-        // Find the button element by its ID
-        var statsButton = document.getElementById('stats-button');
-      
-        // Add a click event listener to the button
-        statsButton.addEventListener('click', function() {
-          // Redirect to the "stats.html" page
-          window.location.href = 'stats.html';
-        });
-    </script>
-      
-
-
+    <script src="/js_files/theme_logic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

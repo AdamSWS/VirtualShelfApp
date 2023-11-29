@@ -27,7 +27,7 @@
           <a class="nav-link" href="../index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"><b>Shelf</b></a>
+          <a class="nav-link" aria-current="page" href="#"><b>Shelf</b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../html_files/settings.html">Settings</a>
@@ -37,7 +37,7 @@
   </nav>
 
 <!-- Book Shelf containing Books -->
-<div class="card" style="border: 1px solid #ddd; background: #bebebe; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); padding: 15px; margin-bottom: 20px;">
+<div class="card" style=" box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4); padding: 15px; margin-bottom: 20px;">
   <div class="card-body">
     <div id="wrap">
       <form action="#" method="get" id="bookshelf">
@@ -51,6 +51,16 @@
 <!-- Letter Wheel indicator - Allows users to scroll through books in alphabetical order with a wheel.  -->
 <div id="scroll-indicator" class="scroll-indicator">
   <div id="scroll-handle" class="scroll-handle"></div>
+</div>
+
+<div class="sort-dropdown">
+  <label for="sort-by">Order by:</label>
+  <select id="sort-by">
+    <option value="title">Title</option>
+    <option value="author">Author</option>
+    <option value="genre">Genre</option>
+    <option value="pages">Page Length</option>
+  </select>
 </div>
 
 <!-- Current Book Information -->
@@ -98,6 +108,7 @@
   </div>
   <!-- Script tags -->
   <script src="../js_files/shelf_action.js"></script> 
+  <script src="/js_files/theme_logic.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

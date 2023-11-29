@@ -1,13 +1,52 @@
-.title-background {
-    background-color: grey;
-    color: #000;
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --primary-color: #007bff;
+    --card-background-color: #f0f0f0; /* Light mode card background */
+    /* ... other colors ... */
 }
 
+body.dark-mode {
+    --background-color: #333;
+    --text-color: #fff;
+    --primary-color: #0066cc;
+    --card-background-color: #444; /* Dark mode card background */
+    /* ... other colors ... */
+}
+
+.title-background {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.light-theme .navbar-light .navbar-nav .nav-link {
+    color: #000; /* Black text for light theme */
+}
+
+/* Styles for dark theme */
+.dark-theme .navbar-dark .navbar-nav .nav-link {
+    color: #fff; /* White text for dark theme */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* ... other styles using root level variables ... */
+}
+
+/* Apply dark mode styles */
+body.dark-mode .card {
+    --background-color: #333;
+    --text-color: #fff;
+}
+
+/* Styles for navbar */
 .navbar-nav {
     width: 100%;
     justify-content: space-around;
 }
 
+/* Additional styles for dark theme if needed */
 .dark-theme {
     background-color: #333;
     color: #fff;

@@ -21,6 +21,7 @@ body, html {
     position: relative;
     display: flex;
     overflow: hidden;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); 
     white-space: nowrap;
 }
 
@@ -30,19 +31,43 @@ div.bookframe {
     border: 1px solid #888; /* Add a border to simulate book covers */
     border-radius: 5px; /* Rounded corners for book covers */
     padding: 20px; /* Add more padding for spacing inside the book cover */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Add depth */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8); /* Add depth */
     transition: transform 0.2s ease; /* Add a smooth transform transition */
+    background-image: linear-gradient(
+        to right, 
+        #eee 50%, 
+        #ccc 50%); /* Gradient for shadow effect */
+    position: relative; /* Needed for absolute positioning of straps */
+}
+
+/* Straps for the book */
+div.bookframe::before,
+div.bookframe::after {
+    content: '';
+    position: absolute;
+    top: 20%; /* Position of the top strap */
+    bottom: 20%; /* Position of the bottom strap */
+    left: 0;
+    right: 0;
+    border-top: 2px solid #444; /* Top strap */
+    border-bottom: 2px solid #444; /* Bottom strap */
+}
+
+/* Adjusting hover effect to include shadow and straps */
+div.bookframe:hover {
+    transform: scale(1.05); /* Enlarge book cover on hover for a hover effect */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+div.bookframe:hover > div a,
+div.bookframe:hover > div span {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Ensure text shadow remains on hover */
 }
 
 div.bookframe > div {
     overflow: hidden; /* Hide overflow */
     text-overflow: ellipsis; /* Add ellipsis for overflowed text */
     white-space: nowrap; /* Prevent text from wrapping */
-}
-
-div.bookframe > div a {
-    font-size: 12px; /* Adjust based on your design */
-    line-height: 14px; /* Adjust based on your design */
 }
 
 div.bookframe:hover {
@@ -197,4 +222,16 @@ input[type="radio"]:checked.book + div {
     background-color: #f44336; /* Red */
   }
   
-
+  .sort-dropdown {
+    margin: 10px auto;
+    text-align: center;
+  }
+  
+  .sort-dropdown label {
+    margin-right: 10px;
+  }
+  
+  .sort-dropdown select {
+    padding: 5px 10px;
+  }
+  
