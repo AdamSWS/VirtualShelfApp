@@ -16,8 +16,8 @@ body, html {
 #bookshelf {
     margin: auto;
     width: 100%; /* Set the width to 100% to take up the full screen width */
-    height: 220px;
-    padding: 5px;
+    height: 1%;
+    padding: 20px;
     position: relative;
     display: flex;
     overflow: hidden;
@@ -26,7 +26,9 @@ body, html {
 }
 
 div.bookframe {
-    margin: 0 10px; /* Increased margin for more spacing between books */
+    align-self: center;
+    height: 80%;
+    margin: 0 5px; /* Increased margin for more spacing between books */
     display: inline-block;
     border: 1px solid #888; /* Add a border to simulate book covers */
     border-radius: 5px; /* Rounded corners for book covers */
@@ -53,15 +55,23 @@ div.bookframe::after {
     border-bottom: 2px solid #444; /* Bottom strap */
 }
 
-/* Adjusting hover effect to include shadow and straps */
+@keyframes rumble {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    25% { transform: translate(-0.25px, -0.25px) rotate(-0.5deg); }
+    50% { transform: translate(-0.25px, 0.25px) rotate(0.5deg); }
+    75% { transform: translate(0.25px, 0.25px) rotate(0.5deg); }
+    100% { transform: translate(0.25px, -0.25px) rotate(-0.5deg); }
+}
+
+/* Apply rumble animation */
 div.bookframe:hover {
-    transform: scale(1.05); /* Enlarge book cover on hover for a hover effect */
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+    /* ... other styles ... */
+    animation: rumble 0.5s infinite;
 }
 
 div.bookframe:hover > div a,
 div.bookframe:hover > div span {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Ensure text shadow remains on hover */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Ensure text shadow remains on hover */
 }
 
 div.bookframe > div {
@@ -71,31 +81,13 @@ div.bookframe > div {
 }
 
 div.bookframe:hover {
-    transform: scale(1.05); /* Enlarge book cover on hover for a hover effect */
+    transform: scale(1.1); /* Increase the scale for a more pronounced pop effect */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6); /* More pronounced shadow for depth */
+    z-index: 100; /* Ensure the book hovers over other elements */
 }
 
 input[type="radio"].book {
     display: none;
-}
-
-input[type="radio"].book + div {
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    text-align: center;
-    font-weight: bold;
-    background: #000000;
-    color: #FFFFFF;
-    font-size: 30px;
-    min-height: 1px;
-    max-height: 10000px;
-    line-height: 30px;
-    top: 250px;
-    left: calc(50% - 200px);
-    margin: 0;
-    display: none;
-    border: 2px solid red;
-    box-sizing: border-box;
 }
 
 input[type="radio"].book + div > span {
@@ -151,24 +143,75 @@ input[type="radio"]:checked.book + div {
 
 
   
-  .scroll-indicator {
-    width: 20%;
-    height: 20px;
-    background-color: #f0f0f0;
+.scroll-indicator {
+    width: 50%; /* Full width for better visibility */
+    height: 40px; /* Increased height for easier interaction */
+    background-color: #e0e0e0; /* Lighter background for better contrast */
     position: relative;
     align-self: center;
     cursor: pointer;
-  }
-  
-  .scroll-handle {
-    width: 20%;
+    margin-top: 20px; /* Space above the scroll indicator */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.scroll-tooltip {
+    position: absolute;
+    bottom: 100%; /* Position above the scroll indicator */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    background-color: #555; /* Tooltip background */
+    color: white; /* Tooltip text color */
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.scroll-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent; /* Triangle pointing down */
+}
+
+.scroll-handle {
+    width: 5%; /* Smaller width for precise control */
     height: 100%;
-    background-color: #b30000;
+    background-color: #007bff; /* Primary color for visibility */
     position: absolute;
     left: 0;
     top: 0;
-    cursor: grab; /* Make sure this line is present */
-  }
+    cursor: grab;
+    border-radius: 20px; /* Match the border-radius of the scroll indicator */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth and interactivity */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.scroll-handle:hover {
+    background-color: #0056b3; /* Darker shade on hover for feedback */
+}
+
+.scroll-handle:active {
+    background-color: #003d82; /* Even darker shade when active */
+    cursor: grabbing;
+}
+
+
+
+
 
   .book-info-card {
     margin-top: 20px; /* Space above the card */

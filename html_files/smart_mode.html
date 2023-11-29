@@ -30,10 +30,11 @@
         <h1 id="scanningMessage"></h1>
         <div id="videoContainer">
             <video id="videoElement" autoplay></video>
+            <h1 id="scanningMessage" style="display: none;"></h1> <!-- Move this inside videoContainer -->
         </div>
         <div class="d-flex justify-content-center mt-3" id="scanContainer">
-            <button class="btn btn-dark" id="startScan">Start Scanning</button>
-            <h2 id="scanningMessage" style="display: none;"></h2> <!-- Initially hidden -->
+            <button class="btn btn-secondary" id="setupCamera">Setup Camera</button>
+            <button class="btn btn-dark" id="startScan" style="display: none;">Start Scanning</button> <!-- Move scanningMessage here -->
         </div>
     </div>
     <!-- Scan info -->

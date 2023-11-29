@@ -290,11 +290,6 @@ function createBookElement(book) {
     radioInput.name = 'book';
     bookFrame.appendChild(radioInput);
 
-    const bookInfo = document.createElement('div');
-    bookInfo.innerHTML = `
-        <a href="#" style="font-size: 12px;">${book.title}</a>
-        <span style="font-size: 10px;">${book.description}</span>
-    `;
 
     const baseWidth = 100; // Base width for books, adjust as needed
     const widthFactor = 0.5; // Adjust this factor to control the variation
@@ -308,8 +303,9 @@ function createBookElement(book) {
     // Set the linear gradient with random color and its darker shade
     bookFrame.style.backgroundImage = `linear-gradient(to right, ${randomColor} 50%, ${darkerShade} 50%)`;
 
-    adjustTitleSize(bookInfo, bookWidth);
-    bookFrame.appendChild(bookInfo);
+    bookFrame.addEventListener('mouseover', function() {
+        updateDescriptionCard(book.id);
+    });
 
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label';
@@ -455,3 +451,35 @@ function showRemoveButtons() {
     // Hide remove buttons
     document.querySelector('.remove-buttons').style.display = 'none';
   }
+
+  function updateDescriptionCard(bookId) {
+    const book = books.find(b => b.id === bookId);
+    if (book) {
+        // Update Title
+        document.getElementById('editable-title').innerText = book.title;
+
+        // Update Author
+        document.getElementById('editable-author').innerHTML = book.author;
+
+        // Update Genre
+        document.getElementById('editable-genre').innerHTML = book.genre;
+
+        // Update Pages
+        document.getElementById('editable-pages').innerHTML = book.pages;
+    }
+}
+document.getElementById('scroll-indicator').addEventListener('click', function(e) {
+    // Calculate the click position as a percentage of the scroll indicator's width
+    const clickX = e.clientX - this.getBoundingClientRect().left;
+    const width = this.offsetWidth;
+    const percentage = (clickX / width) * 100;
+
+    // Move the scroll handle to the clicked position
+    const handleWidth = scrollHandle.offsetWidth;
+    let handlePosition = clickX - handleWidth / 2;
+    handlePosition = Math.max(0, Math.min(handlePosition, width - handleWidth));
+    scrollHandle.style.left = handlePosition + 'px';
+
+    // Scroll the bookshelf to the corresponding position
+    smoothScrollToPercentage(percentage);
+});

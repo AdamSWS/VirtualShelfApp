@@ -56,5 +56,17 @@
     box-sizing: border-box;
 }
 
+.btn-custom {
+    height: 40px; /* Adjust the height as needed */
+    width: 150px; /* Adjust the width as needed */
+    padding: 6px 24px; /* Adjust padding if needed */
+    /* Other styling properties */
+}
 
+/* Custom Icon Style */
+.style-icon {
+    width: 50px;
+    height: 50px;
+    /* Other properties */
+}
 
